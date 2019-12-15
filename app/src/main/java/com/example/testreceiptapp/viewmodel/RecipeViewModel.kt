@@ -1,5 +1,6 @@
 package com.example.testreceiptapp.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.testreceiptapp.model.RecipeModel
@@ -9,13 +10,11 @@ import javax.inject.Inject
 class RecipeViewModel @Inject constructor(private val mRecipeRepository: RecipeRepository) : ViewModel() {
 
     var mRecipeListLiveData: LiveData<List<RecipeModel>>? = null
+    var mSearchRecipeListLiveData: LiveData<List<RecipeModel>>? = null
     lateinit var selectedRecipeModel : RecipeModel
 
     fun initRecipeList() {
-        if (mRecipeListLiveData != null) {
-            return
-        }
-
+        mRecipeListLiveData = null
         mRecipeListLiveData = mRecipeRepository.getRecipeList()
     }
 
@@ -29,5 +28,10 @@ class RecipeViewModel @Inject constructor(private val mRecipeRepository: RecipeR
 
     fun deleteRecipe(recipeModel: RecipeModel) {
         mRecipeRepository.deleteRecipe(recipeModel)
+    }
+
+    fun initSearchRecipe(searchTerm: Int) {
+        mSearchRecipeListLiveData = null
+        mSearchRecipeListLiveData = mRecipeRepository.searchRecipe(searchTerm)
     }
 }

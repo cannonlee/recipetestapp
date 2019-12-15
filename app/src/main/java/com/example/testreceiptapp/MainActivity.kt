@@ -1,6 +1,8 @@
 package com.example.testreceiptapp
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.testreceiptapp.adapter.RecipeRecyclerAdapter
@@ -18,13 +20,7 @@ class MainActivity : DaggerAppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       supportFragmentManager.beginTransaction().add(R.id.fragment_container, ListFragment()).commit()
-
-        initializeViewModel()
-    }
-
-    private fun initializeViewModel() {
-
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, ListFragment()).commit()
     }
 
     override fun onFabClick() {

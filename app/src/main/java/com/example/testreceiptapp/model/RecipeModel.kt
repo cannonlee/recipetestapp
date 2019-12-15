@@ -10,7 +10,8 @@ data class RecipeModel (
    @PrimaryKey(autoGenerate = true)
    var id: Int,
    var title: String,
-   var type: String,
+   var type_id: Int,
+   var type_desc: String,
    var time: Int,
    var description: String,
    var ingredient: String,

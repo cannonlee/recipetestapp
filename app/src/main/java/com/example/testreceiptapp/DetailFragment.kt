@@ -65,11 +65,11 @@ class DetailFragment : DaggerFragment() {
     private fun configureDetail() {
         mRecipeModel = mRecipeViewModel.selectedRecipeModel
         detail_edit_title.text = mRecipeModel.title
-        detail_edit_type.text = mRecipeModel.type
+        detail_edit_type.text = mRecipeModel.type_desc
         detail_edit_time.text = mRecipeModel.time.toString()
-        detail_edit_desc.text = mRecipeModel.description
-        detail_edit_ingredient.text = mRecipeModel.ingredient
-        detail_edit_recipe.text = mRecipeModel.recipe
+        detail_edit_desc.text = mRecipeModel.description.replace("\\n", System.getProperty("line.separator")!!, false)
+        detail_edit_ingredient.text = mRecipeModel.ingredient.replace("\\n", System.getProperty("line.separator")!!, false)
+        detail_edit_recipe.text = mRecipeModel.recipe.replace("\\n", System.getProperty("line.separator")!!, false)
         val bmp = BitmapFactory.decodeByteArray(mRecipeModel.image, 0,
             mRecipeModel.image!!.size)
         detail_image.setImageBitmap(bmp)

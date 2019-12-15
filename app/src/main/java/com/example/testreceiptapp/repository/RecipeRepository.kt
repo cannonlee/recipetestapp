@@ -1,10 +1,8 @@
 package com.example.testreceiptapp.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.testreceiptapp.dao.RecipeDao
 import com.example.testreceiptapp.model.RecipeModel
-import java.lang.reflect.Type
 import java.util.concurrent.Executor
 import javax.inject.Inject
 
@@ -41,5 +39,9 @@ class RecipeRepository @Inject constructor(var recipeDao: RecipeDao, var executo
         executor.execute{
             recipeDao.deleteRecipe(recipeModel)
         }
+    }
+
+    fun searchRecipe(searchTerm: Int): LiveData<List<RecipeModel>> {
+        return recipeDao.searchRecipe(searchTerm)
     }
 }

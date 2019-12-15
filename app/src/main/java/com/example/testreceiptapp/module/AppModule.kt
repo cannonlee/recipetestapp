@@ -5,6 +5,8 @@ import android.content.Context
 import androidx.room.Room
 import com.example.testreceiptapp.dao.RecipeDao
 import com.example.testreceiptapp.repository.RecipeRepository
+import com.example.testreceiptapp.repository.SampleRepository
+import com.example.testreceiptapp.repository.TypeRepository
 import dagger.Module
 import dagger.Provides
 import java.util.concurrent.Executor
@@ -43,6 +45,18 @@ class AppModule {
     @Singleton
     fun provideRecipeRepository(recipeDao: RecipeDao, executor: Executor): RecipeRepository {
         return RecipeRepository(recipeDao, executor)
+    }
+
+    @Provides
+    @Singleton
+    fun provideTypeRepository(): TypeRepository {
+        return TypeRepository()
+    }
+
+    @Provides
+    @Singleton
+    fun provideSampleRepository(): SampleRepository {
+        return SampleRepository()
     }
 
     // ---- API INTERFACE INJECTION ---- //

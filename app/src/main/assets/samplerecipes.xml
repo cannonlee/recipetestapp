@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<samplerecipes>
+    <recipe>
+        <title>Almond Rice Pudding</title>
+        <type_id>0</type_id>
+        <type_desc>Breakfast</type_desc>
+        <time>5</time>
+        <description>Add your favorite berries to the top for some color and a yummy taste!</description>
+        <ingredient>3 cups almond milk \n 1 cup white or brown rice, uncooked \n 1⁄4 cup sugar \n 1 teaspoon vanilla \n 1⁄4 teaspoon almond extract \n cinnamon to taste \n 1⁄4 cup toasted almonds (optional)</ingredient>
+        <steps>1. Combine almond milk and rice in a 2-3 quart saucepan, and bring to a boil. \n 2. Reduce heat and simmer for 1/2 hour with the lid on until the rice is soft. \n 3. Add sugar, vanilla, almond extract and cinnamon. Stir and serve warm. \n 4. Refrigerate leftovers within 2 hours.</steps>
+        <image>almondricepudding</image>
+    </recipe>
+    <recipe>
+        <title>Baked Apple and Cranberries</title>
+        <type_id>1</type_id>
+        <type_desc>Desserts</type_desc>
+        <time>15</time>
+        <description>Serve for breakfast or dessert!</description>
+        <ingredient>1 baking apple (try Golden Delicious, Granny Smith, Jonathan, or Braeburn) \n dash of cinnamon to taste \n 1 Tablespoon dried cranberries \n 1 teaspoon brown sugar \n 1⁄2 teaspoon margarine</ingredient>
+        <steps>1. Wash apple and remove core (seed area), leaving the bottom to hold in the filling. \n 2. Peel a small band of skin from around the top of the apple. \n 3. Place the apple in a microwave safe container. \n 4. Sprinkle cinnamon around the top of the apple and into the hole. \n 5. Fill the center of the apple with cranberries, pressing down if needed. \n 6. Top the cranberries with the brown sugar and margarine. \n 7. Cover loosely with wax paper. \n 8. Microwave on high for about 2 1/2 minutes or until apple is soft when poked through the center hole with a fork. Cool slightly. \n 9. Refrigerate leftovers within 2 hours.</steps>
+        <image>bakedapplecranberries</image>
+    </recipe>
+    <recipe>
+        <title>Potato Wedges</title>
+        <type_id>2</type_id>
+        <type_desc>Snacks</type_desc>
+        <time>35</time>
+        <description>Snacks!!!</description>
+        <ingredient>3 large baking potatoes \n 3 Tablespoons vegetable oil \n 1 1⁄2 teaspoons paprika \n 1 1⁄2 teaspoons garlic powder \n 1 1⁄2 teaspoons chili powder \n 1 1⁄2 teaspoons onion powder</ingredient>
+        <steps>1. Preheat oven to 450 degrees F. \n 2. Scrub potatoes well but do not peel. \n 3. Cut each potato into 8 wedges, lengthwise. \n 4. Mix oil, paprika, garlic powder, chili powder, and onion powder together. Spread the mixture on the sides of each potato wedge. \n 5. Place on a baking sheet with space between wedges. \n 6. Bake for 30 minutes in preheated oven. \n 7. efrigerate leftovers within 2 hours.</steps>
+        <image>potatowedges</image>
+    </recipe>
+    <recipe>
+        <title>Radish and Cucumber Salad</title>
+        <type_id>3</type_id>
+        <type_desc>Salads</type_desc>
+        <time>15</time>
+        <description>Salads!!!</description>
+        <ingredient>1⁄4 cup nonfat plain yogurt \n 1⁄4 teaspoon garlic powder \n 1⁄4 teaspoon each salt and pepper \n 10 radishes, washed and thinly sliced (about 1 bunch) \n 1 cucumber, washed and cut into thin rounds</ingredient>
+        <steps>1. In a large bowl, mix together yogurt, garlic, salt and pepper. Add radishes and cucumbers and stir to combine. \n 2. Cover and refrigerate for at least 15 minutes before serving. \n 3. Refrigerate leftovers within 2 hours.</steps>
+        <image>radishcucumbersalad</image>
+    </recipe>
+    <recipe>
+        <title>Radish and Cucumber Salad</title>
+        <type_id>4</type_id>
+        <type_desc>Pizza</type_desc>
+        <time>10</time>
+        <description>No cream cheese? Try peanut butter or sunflower seed butter.</description>
+        <ingredient>1 English Muffin (try whole grain) \n 2 Tablespoons reduced fat or fat-free cream cheese \n 2 Tablespoons sliced strawberries \n 2 Tablespoons blueberries \n 2 Tablespoons crushed pineapple</ingredient>
+        <steps>1. Split open the English muffin and toast the halves until lightly browned. \n 2. Spread cream cheese on both halves. \n 3. Divide the fruit between the two muffin halves and arrange on top of cream cheese. \n 4. These are best when served soon. \n 5. Refrigerate leftovers within 2 hours.</steps>
+        <image>radishcucumbersalad</image>
+    </recipe>
+</samplerecipes>

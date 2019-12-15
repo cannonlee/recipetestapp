@@ -4,27 +4,23 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import android.media.MediaScannerConnection
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.example.testreceiptapp.adapter.RecipeTypeSpinnerAdapter
 import com.example.testreceiptapp.model.RecipeModel
 import com.example.testreceiptapp.viewmodel.RecipeViewModel
+import com.example.testreceiptapp.viewmodel.TypeViewModel
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_add.*
 import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.FileOutputStream
 import java.io.IOException
-import java.util.*
-import java.util.Calendar.*
 import javax.inject.Inject
 
 class AddFragment : DaggerFragment() {
@@ -33,7 +29,11 @@ class AddFragment : DaggerFragment() {
     @set:Inject
     var mViewModelFactory: ViewModelProvider.Factory? = null
     var mRecipeViewModel: RecipeViewModel? = null
+    private val mTypeViewModel by lazy {
+        ViewModelProviders.of(activity!!, mViewModelFactory).get(TypeViewModel::class.java)
+    }
     private val GALLERY = 1
+    private var selectedItem: Int = 0
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -60,6 +60,25 @@ class AddFragment : DaggerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configureViewModel()
+
+        //retrieve the xml value for the tpy
+        mTypeViewModel.initTypeList(context!!)
+        //init the Type spinner
+        add_edit_type.adapter = RecipeTypeSpinnerAdapter(
+            context!!,
+            R.layout.support_simple_spinner_dropdown_item,
+            mTypeViewModel.getTypeList().toList()
+        )
+
+        add_edit_type.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                selectedItem = position
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
 
         add_edit_button.setOnClickListener(configureAddButton())
         add_button_photo.setOnClickListener {
@@ -105,8 +124,15 @@ class AddFragment : DaggerFragment() {
             var recipeModel = RecipeModel(
                 0,
                 add_edit_title.text.toString(),
-                add_edit_type.text.toString(),
-                Integer.parseInt(add_edit_time.text.toString()),
+//                add_edit_type.text.toString(),
+                selectedItem,
+                mTypeViewModel.getTypeList()[selectedItem],
+                Integer.parseInt(
+                    when (add_edit_time.text.toString()) {
+                        "" -> "0"
+                        else -> add_edit_time.text.toString()
+                    }
+                ),
                 add_edit_desc.text.toString(),
                 add_edit_ingredient.text.toString(),
                 add_edit_recipe.text.toString(),

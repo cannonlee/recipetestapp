@@ -21,4 +21,7 @@ interface RecipeDao {
 
     @Delete
     fun deleteRecipe(recipeModel: RecipeModel)
+
+    @Query("SELECT * FROM RecipeModel WHERE type_id = :searchTerm")
+    fun searchRecipe(searchTerm: Int): LiveData<List<RecipeModel>>
 }

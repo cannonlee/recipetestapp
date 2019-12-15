@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/md_black_1000"
             android:text="Title"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
             app:layout_constraintLeft_toRightOf="@id/view_holder_main_recycle_img"
