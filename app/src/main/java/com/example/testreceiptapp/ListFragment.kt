@@ -116,7 +116,7 @@ class ListFragment : DaggerFragment() {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream)
                 val image = stream.toByteArray()
 
-                var recipeModel = RecipeModel(
+                val recipeModel = RecipeModel(
                     0,
                     title = value.title,
                     type_id = value.type_id,
@@ -136,6 +136,7 @@ class ListFragment : DaggerFragment() {
         }
     }
 
+    // Call when observing the LiveData to update the UI when value change
     private fun updateListUI(): Observer<List<RecipeModel>> {
         return Observer<List<RecipeModel>> {
             if (it != null && it.isNotEmpty()) {
@@ -156,7 +157,7 @@ class ListFragment : DaggerFragment() {
 
     private fun configureSpinner() {
 
-        var tempList: MutableList<String> = mTypeViewModel.getTypeList()
+        val tempList: MutableList<String> = mTypeViewModel.getTypeList()
         tempList.add(0, "All")
 
         main_spinner.adapter = RecipeTypeSpinnerAdapter(
